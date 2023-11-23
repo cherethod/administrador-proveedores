@@ -1,0 +1,41 @@
+/*  norlmalize */
+* {
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+}
+
+:root {
+  --btn-primary: rgb(64, 104, 224);
+  --btn-primary-hover: rgb(106, 142, 250);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.btn__primary {
+  padding: 10px 15px;
+  background-color: var(--btn-primary);
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn__primary:hover {
+background-color: var(--btn-primary-hover);
+}
+
+.btn__primary--link {
+  text-decoration: none;
+}
+
+.container {
+  /* background-color: orange; */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
