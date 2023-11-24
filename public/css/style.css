@@ -10,11 +10,6 @@
   --btn-primary-hover: rgb(106, 142, 250);
 }
 
-body {
-  width: 100vw;
-  height: 100vh;
-}
-
 .btn__primary {
   padding: 10px 15px;
   background-color: var(--btn-primary);
@@ -31,11 +26,94 @@ background-color: var(--btn-primary-hover);
   text-decoration: none;
 }
 
+.link__item {
+  color: var(--btn-primary);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.link__item:hover {
+  color: var(--btn-primary-hover);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
 .container {
-  /* background-color: orange; */
+  background-color: #222;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.admin__container {
+  display: grid;
+  grid-template-rows: 1fr 10fr;
+  grid-template-columns: 1fr;
+  width: 100%;
+  height: 100%;
+}
+
+.admin__container > .header__container {
+  /*background-color: blue;*/
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+  padding: 0 50px;
+}
+
+.admin__container > .main__container {
+  /*background-color: tomato;*/
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.admin__container > .main__container > .options__container {
+  /*background-color: red;*/
+  display: grid;
+  place-content: center;
+  /*place-items: center;*/
+  gap: 20px;
+  text-align: center;
+}
+.admin__container > .main__container > .results__container {
+  background-color: purple;
+  height: 100%;
+  margin: 0 auto;
+  display: grid;
+  place-content: center;
+  place-items: center;
+}
+
+.admin__container > .main__container > .results__container > .results {
+  background-color: #fff;
+  place-content: start;
+  height: 50vh;
+  width: 100%;
+  padding: 30px 50px;
+}
+
+.admin__container > .main__container > .results__container > .results > .result {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(150px ,1fr));
+  /*gap: 20px;*/
+  text-align: center;
+  /*padding: 5px 0;*/
+  border: 1px solid #000;
+}
+
+.admin__container > .main__container > .results__container > .results > .result > span {
+  border-right: 1px solid #000 ;
+  padding: 10px;
+  width: 100%;
+}
+
+.admin__container > .main__container > .results__container > .results > .result > span:last-child {
+  border-right: none;
+}

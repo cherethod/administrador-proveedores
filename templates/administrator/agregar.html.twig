@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administrador de proveedores{% endblock %}
+{% block stylesheets %} {{ parent() }} {% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="admin__container">
+            <div class="header__container">
+                <a href="{{ path('index') }}" class="link__item">Ir al inicio</a>
+            </div>
+            <div class="main__container">
+                {{ form_start(agregar_proveedor) }}
+                {{ form_end(agregar_proveedor) }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
