@@ -11,7 +11,7 @@
             <div class="main__container">
                 <div class="options__container">
                     <a href="{{ path('agregar') }}" class="btn__primary btn__primary--link">Agregar</a>
-                    <a href="#" class="btn__primary btn__primary--link">Editar</a>
+                    <a href="{{ path('editar', {'idProveedor': 1}) }}" class="btn__primary btn__primary--link">Editar</a>
                     <a href="#" class="btn__primary btn__primary--link">Mostrar</a>
                 </div>
                 <div class="results__container">
@@ -24,79 +24,23 @@
                             <span class="result__data">Activo</span>
                         </div>
 
-                        <div class="result result__title">
-                            <span class="result__data">Limpiezas SL</span>
-                            <span class="result__data">contacto@limpiezassl.es</span>
-                            <span class="result__data">9175578445</span>
-                            <span class="result__data">Hotel</span>
-                            <span class="result__data">No</span>
-                        </div>
 
+                        {% for proveedor in listaProveedores %}
+{#                            {{ proveedor.getNombreTipoProveedor() }}#}
                         <div class="result result__title">
-                            <span class="result__data">Caterings Lucia</span>
-                            <span class="result__data">lucia@cateringsluci.com</span>
-                            <span class="result__data">977457785</span>
-                            <span class="result__data">Hotel</span>
-                            <span class="result__data">Si</span>
-                        </div>
+                            <span class="result__data">{{ proveedor.nombre }}</span>
+                            <span class="result__data">{{ proveedor.email }}</span>
+                            <span class="result__data">{{ proveedor.telefono }}</span>
+                            <span class="result__data">{{ proveedor.tipoProveedor.nombre }}</span>
+                            <span class="result__data">{{ proveedor.activo ? 'Si' : 'No' }}</span>
+                            <a href="{{ path('editar', {'idProveedor': proveedor.id}) }}" class="btn__primary btn__primary--link">Editar</a>
+                            <a href="{{ path('eliminar', {'idProveedor': proveedor.id}) }}" class="btn__primary btn__primary--link">Eliminar</a>
 
-                        <div class="result result__title">
-                            <span class="result__data">Sydig Systems</span>
-                            <span class="result__data">contratacion@sydigreus.es</span>
-                            <span class="result__data">977775215</span>
-                            <span class="result__data">Complemento</span>
-                            <span class="result__data">Si</span>
                         </div>
+                        {% endfor %}
 
-                        <div class="result result__title">
-                            <span class="result__data">Cesped Reus</span>
-                            <span class="result__data">info@cespedartidicialreus.es</span>
-                            <span class="result__data">977777712</span>
-                            <span class="result__data">Pista</span>
-                            <span class="result__data">No</span>
-                        </div>
                     </div>
-                  <!-- <table class="results">
-                        <thead class="result result__title">
-                            <tr>
-                                <th>Nombre</th>
-                                <th>Correo</th>
-                                <th>Teléfono</th>
-                                <th>Tipo de Proveedor</th>
-                                <th>Activo</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Nombre del proveedor</td>
-                                <td>correo@example.com</td>
-                                <td>123456789</td>
-                                <td>Hotel</td>
-                                <td>Sí</td>
-                            </tr>
-                            <tr>
-                                <td>Nombre del proveedor</td>
-                                <td>correo@example.com</td>
-                                <td>123456789</td>
-                                <td>Piscina</td>
-                                <td>Sí</td>
-                            </tr>
-                            <tr>
-                                <td>Nombre del proveedor</td>
-                                <td>correo@example.com</td>
-                                <td>123456789</td>
-                                <td>Hotel</td>
-                                <td>Sí</td>
-                            </tr>
-                            <tr>
-                                <td>Nombre del proveedor</td>
-                                <td>correo@example.com</td>
-                                <td>123456789</td>
-                                <td>Complemento</td>
-                                <td>Sí</td>
-                            </tr>
-                        </tbody>
-                    </table> -->
+
                 </div>
             </div>
         </div>

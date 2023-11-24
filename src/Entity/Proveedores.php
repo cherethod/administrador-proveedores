@@ -125,7 +125,7 @@ class Proveedores
     /**
      * @return mixed|null
      */
-    public function getTipoProveedor(): ?int
+    public function getTipoProveedor(): ?TipoProveedor
     {
         return $this->tipoProveedor;
     }

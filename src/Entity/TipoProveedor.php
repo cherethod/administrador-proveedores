@@ -48,7 +48,12 @@ class TipoProveedor
         return $this->nombre;
     }
 
-    public function setNombre(string $nombree): self
+//    public function getNombre(): ?string
+//    {
+//        return $this->nombre;
+//    }
+
+    public function setNombre(string $nombre): self
     {
         $this->nombre = $nombre;
 

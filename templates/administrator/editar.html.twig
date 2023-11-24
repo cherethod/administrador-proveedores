@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editar proveedor{% endblock %}
+{% block stylesheets %} {{ parent() }} {% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="admin__container">
+            <div class="header__container">
+                <a href="{{ path('index') }}" class="link__item">Ir al inicio</a>
+            </div>
+            <div class="main__container">
+                {{ dump(mostrarProveedoresPorId) }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

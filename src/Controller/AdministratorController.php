@@ -25,7 +25,11 @@ class AdministratorController extends AbstractController
      *  @Route("/administrator", name="administrator")
      */  
     public function administrator() {
-        return $this->render('administrator/administrator.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $proveedores = $em->getRepository(Proveedores::class)->findAll();
+        return $this->render('administrator/administrator.html.twig', array(
+            'listaProveedores'=>$proveedores,
+        ));
       }
 
     /**
@@ -51,5 +55,17 @@ class AdministratorController extends AbstractController
         return $this->render('administrator/agregar.html.twig', [
             'agregar_proveedor' => $form->createView(),
         ]);
+    }
+
+
+    /**
+     *  @Route("/editar/{idProveedor}", name="editar")
+     */
+    public function editar($idProveedor) {
+        $em = $this->getDoctrine()->getManager();
+        $proveedoresPorIdRepository = $em->getRepository(Proveedores::class)->MostrarProveedorPorId($idProveedor);
+        return $this->render('administrator/editar.html.twig', array(
+            'mostrarProveedoresPorId'=>$proveedoresPorIdRepository
+        ));
     }
 }

@@ -23,6 +23,26 @@ class ProveedoresRepository extends ServiceEntityRepository
         parent::__construct($registry, Proveedores::class);
     }
 
+    public function MostrarProveedores()
+    {
+
+    }
+
+    public function MostrarProveedorPorId($id)
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                dql: '
+                    SELECT proveedores.id, proveedores.nombre, proveedores.email, proveedores.telefono
+                    FROM App\Entity\Proveedores proveedores
+                    WHERE proveedores.id =:identificador
+                '
+            )
+            ->setParameter('identificador', $id)
+            ->getSingleResult()
+            ;
+    }
+
     /**
      * @throws ORMException
      * @throws OptimisticLockException
