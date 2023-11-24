@@ -2,6 +2,7 @@
 
 {% block title %}Administrador de proveedores{% endblock %}
 {% block stylesheets %} {{ parent() }} {% endblock %}
+    {% block javascripts %} {{ parent() }} {% endblock %}
 {% block body %}
     <div class="container">
         <div class="admin__container">
@@ -22,19 +23,20 @@
                             <span class="result__data">Teléfono</span>
                             <span class="result__data">Tipo de proveedor</span>
                             <span class="result__data">Activo</span>
+                            <span class="result__data">Acciones</span>
                         </div>
 
 
                         {% for proveedor in listaProveedores %}
 {#                            {{ proveedor.getNombreTipoProveedor() }}#}
-                        <div class="result result__title">
+                        <div class="result">
                             <span class="result__data">{{ proveedor.nombre }}</span>
                             <span class="result__data">{{ proveedor.email }}</span>
                             <span class="result__data">{{ proveedor.telefono }}</span>
                             <span class="result__data">{{ proveedor.tipoProveedor.nombre }}</span>
                             <span class="result__data">{{ proveedor.activo ? 'Si' : 'No' }}</span>
-                            <a href="{{ path('editar', {'idProveedor': proveedor.id}) }}" class="btn__primary btn__primary--link">Editar</a>
-                            <a href="{{ path('eliminar', {'idProveedor': proveedor.id}) }}" class="btn__primary btn__primary--link">Eliminar</a>
+                            <a href="{{ path('editar', {'idProveedor': proveedor.id}) }}" class="btn__small btn--green"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a href="{{ path('eliminar', {'idProveedor': proveedor.id}) }}" class="btn__small btn--red"><i class="fa-solid fa-trash"></i></a>
 
                         </div>
                         {% endfor %}

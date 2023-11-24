@@ -6,9 +6,10 @@
     <div class="container">
         <div class="admin__container">
             <div class="header__container">
+                <a href="{{ path('administrator') }}" class="link__item">Volver</a>
                 <a href="{{ path('index') }}" class="link__item">Ir al inicio</a>
             </div>
-            <div class="main__container">
+            <div class="main__container add__provider">
                 {{ form_start(agregar_proveedor) }}
                 {{ form_end(agregar_proveedor) }}
             </div>

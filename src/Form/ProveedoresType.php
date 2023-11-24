@@ -22,7 +22,7 @@ class ProveedoresType extends AbstractType
             ->add('telefono', IntegerType::class)
             ->add('activo', ChoiceType::class, [
                 'choices' => [
-                    '---' => null,
+                    'Seleccione el estado' => null,
                     'Si' => true,
                     'No' => false,
                 ],

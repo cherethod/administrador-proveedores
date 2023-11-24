@@ -68,4 +68,16 @@ class AdministratorController extends AbstractController
             'mostrarProveedoresPorId'=>$proveedoresPorIdRepository
         ));
     }
+
+
+    /**
+     *  @Route("/eliminar/{idProveedor}", name="eliminar")
+     */
+    public function eliminar($idProveedor) {
+        $em = $this->getDoctrine()->getManager();
+        $proveedoresPorIdRepository = $em->getRepository(Proveedores::class)->MostrarProveedorPorId($idProveedor);
+        return $this->render('administrator/eliminar.html.twig', array(
+            'mostrarProveedoresPorId'=>$proveedoresPorIdRepository
+        ));
+    }
 }
