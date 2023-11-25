@@ -23,26 +23,6 @@ class ProveedoresRepository extends ServiceEntityRepository
         parent::__construct($registry, Proveedores::class);
     }
 
-    public function MostrarProveedores()
-    {
-
-    }
-
-    public function MostrarProveedorPorId($id)
-    {
-        return $this->getEntityManager()
-            ->createQuery(
-                dql: '
-                    SELECT proveedores.id, proveedores.nombre, proveedores.email, proveedores.telefono
-                    FROM App\Entity\Proveedores proveedores
-                    WHERE proveedores.id =:identificador
-                '
-            )
-            ->setParameter('identificador', $id)
-            ->getSingleResult()
-            ;
-    }
-
     /**
      * @throws ORMException
      * @throws OptimisticLockException
@@ -66,33 +46,4 @@ class ProveedoresRepository extends ServiceEntityRepository
             $this->_em->flush();
         }
     }
-
-    // /**
-    //  * @return Proveedores[] Returns an array of Proveedores objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Proveedores
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

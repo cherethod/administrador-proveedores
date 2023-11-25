@@ -68,7 +68,6 @@ class Proveedores
         $this->activo = $activo;
     }
 
-
     public function getId(): ?int
     {
         return $this->id;
@@ -133,7 +132,8 @@ class Proveedores
     /**
      * @param mixed|null $tipoProveedor
      */
-    public function setTipoProveedor(?TipoProveedor $tipoProveedor): self //Consultado a chatGPT no conseguia que enviara la id en lugar del nombre
+    // Método consultado al no conseguir que enviara la id en lugar del nombre
+    public function setTipoProveedor(?TipoProveedor $tipoProveedor): self
     {
         $this->tipoProveedor = $tipoProveedor;
 

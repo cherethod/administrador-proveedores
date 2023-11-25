@@ -12,7 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ProveedoresType extends AbstractType
+class EditarProveedorType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -21,15 +21,16 @@ class ProveedoresType extends AbstractType
             ->add('email')
             ->add('telefono', IntegerType::class)
             ->add('activo', ChoiceType::class, [
-                'choices' => [
-                    'Seleccione el estado' => null,
-                    'Si' => true,
-                    'No' => false,
-                ],
-            ])
+                    'choices' => [
+                        'Seleccione el estado' => null,
+                        'Si' => true,
+                        'No' => false,
+                    ],
+                ])
             ->add('tipoProveedor', EntityType::class, [
                 'class' => TipoProveedor::class,
                 'choice_label' => 'nombre',
+                'placeholder' => 'Seleccione tipo de proveedor',
                 'choice_value' => 'id',
             ])
             ->add('Enviar', SubmitType::class);

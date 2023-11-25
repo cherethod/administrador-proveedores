@@ -37,7 +37,6 @@ class TipoProveedor
         $this->proveedores = new ArrayCollection();
     }
 
-
     public function getId(): ?int
     {
         return $this->id;
@@ -47,11 +46,6 @@ class TipoProveedor
     {
         return $this->nombre;
     }
-
-//    public function getNombre(): ?string
-//    {
-//        return $this->nombre;
-//    }
 
     public function setNombre(string $nombre): self
     {
@@ -63,4 +57,12 @@ class TipoProveedor
     public function AgregarProveedor(Proveedores $proveedores) {
         $this->proveedores[]=$proveedores;
     }
+
+    // Método consultado
+    public function __toString(): string
+    {
+        return $this->id;
+    }
 }
+
+

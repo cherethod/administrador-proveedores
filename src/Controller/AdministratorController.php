@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Proveedores;
+use App\Form\EditarProveedorType;
 use App\Form\ProveedoresType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -24,7 +25,8 @@ class AdministratorController extends AbstractController
     /**
      *  @Route("/administrator", name="administrator")
      */  
-    public function administrator() {
+    public function administrator()
+    {
         $em = $this->getDoctrine()->getManager();
         $proveedores = $em->getRepository(Proveedores::class)->findAll();
         return $this->render('administrator/administrator.html.twig', array(
@@ -35,7 +37,8 @@ class AdministratorController extends AbstractController
     /**
      *  @Route("/agregar", name="agregar")
      */
-    public function agregar(Request $request) {
+    public function agregar(Request $request)
+    {
         $proveedor = new Proveedores();
         $form = $this->createForm(ProveedoresType::class, $proveedor);
         $form->handleRequest($request);
@@ -61,11 +64,25 @@ class AdministratorController extends AbstractController
     /**
      *  @Route("/editar/{idProveedor}", name="editar")
      */
-    public function editar($idProveedor) {
+    public function editar($idProveedor, Request $request)
+    {
+
         $em = $this->getDoctrine()->getManager();
-        $proveedoresPorIdRepository = $em->getRepository(Proveedores::class)->MostrarProveedorPorId($idProveedor);
+        $proveedor = $em->getRepository(Proveedores::class)->find($idProveedor);
+        $form = $this->createForm(EditarProveedorType::class, $proveedor);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $proveedor = $form->getData();
+            $proveedor->setUltimaModificacion(new \DateTime());
+
+            $em->persist($proveedor);
+            $em->flush();
+
+            return $this->redirectToRoute('administrator');
+        }
         return $this->render('administrator/editar.html.twig', array(
-            'mostrarProveedoresPorId'=>$proveedoresPorIdRepository
+            'editar_proveedor' => $form->createView(),
         ));
     }
 
@@ -73,11 +90,24 @@ class AdministratorController extends AbstractController
     /**
      *  @Route("/eliminar/{idProveedor}", name="eliminar")
      */
-    public function eliminar($idProveedor) {
+    public function eliminar($idProveedor)
+    {
         $em = $this->getDoctrine()->getManager();
-        $proveedoresPorIdRepository = $em->getRepository(Proveedores::class)->MostrarProveedorPorId($idProveedor);
-        return $this->render('administrator/eliminar.html.twig', array(
-            'mostrarProveedoresPorId'=>$proveedoresPorIdRepository
-        ));
+        $proveedor = $em->getRepository(Proveedores::class)->find($idProveedor);
+
+        if (!$proveedor) {
+            throw new \Error('Error con el identificador del proveedor');
+        }
+
+        try {
+            $em->remove($proveedor);
+            $em->flush();
+        } catch (\Exception $error) {
+            throw new \Error('Error al eliminar el provedor');
+        }
+
+//        return new Response('Registro eliminado correctamente');
+
+        return $this->redirectToRoute('administrator');
     }
 }

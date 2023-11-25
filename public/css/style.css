@@ -145,41 +145,41 @@ body {
   border-right: none;
 }
 
-.admin__container > .main__container.add__provider {
+.admin__container > .main__container:where(.add__provider, .edit__provider ){
   display: flex;
   place-items: center;
   place-content: center;
   color: #fff;
 }
 
-.admin__container > .main__container.add__provider > form  {
+.admin__container > .main__container:where(.add__provider, .edit__provider ) > form  {
   width: 30%;
   display: flex;
   flex-flow: column nowrap;
   gap: 20px;
 }
 
-.admin__container > .main__container.add__provider > form > div {
+.admin__container > .main__container:where(.add__provider, .edit__provider ) > form > div {
   display: flex;
   flex-flow: column nowrap;
   gap: 5px;
 }
 
-.admin__container > .main__container.add__provider > form > div > :where(input, select) {
+.admin__container > .main__container:where(.add__provider, .edit__provider ) > form > div > :where(input, select) {
   padding: 5px;
 }
 
-.admin__container > .main__container.add__provider > form > div > input[type="number"]::-webkit-inner-spin-button,
-.admin__container > .main__container.add__provider > form > div > input[type="number"]::-webkit-outer-spin-button {
+.admin__container > .main__container:where(.add__provider, .edit__provider ) > form > div > input[type="number"]::-webkit-inner-spin-button,
+.admin__container > .main__container:where(.add__provider, .edit__provider ) > form > div > input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.admin__container > .main__container.add__provider > form > div > input[type="number"] {
+.admin__container > .main__container:where(.add__provider, .edit__provider ) > form > div > input[type="number"] {
   -moz-appearance: textfield;
 }
 
-.admin__container > .main__container.add__provider > form > div > button {
+.admin__container > .main__container:where(.add__provider, .edit__provider ) > form > div > button {
   margin-top: 30px;
   padding: 10px 15px;
   background-color: var(--btn-primary);
@@ -188,6 +188,6 @@ body {
   cursor: pointer;
 }
 
-.admin__container > .main__container.add__provider > form > div > button:hover {
+.admin__container > .main__container:where(.add__provider, .edit__provider ) > form > div > button:hover {
   background-color: var(--btn-primary-hover);
 }

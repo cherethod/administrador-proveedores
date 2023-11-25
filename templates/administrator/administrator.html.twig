@@ -12,8 +12,8 @@
             <div class="main__container">
                 <div class="options__container">
                     <a href="{{ path('agregar') }}" class="btn__primary btn__primary--link">Agregar</a>
-                    <a href="{{ path('editar', {'idProveedor': 1}) }}" class="btn__primary btn__primary--link">Editar</a>
-                    <a href="#" class="btn__primary btn__primary--link">Mostrar</a>
+{#                    <a href="{{ path('editar', {'idProveedor': 1}) }}" class="btn__primary btn__primary--link">Editar</a>#}
+{#                    <a href="#" class="btn__primary btn__primary--link">Mostrar</a>#}
                 </div>
                 <div class="results__container">
                     <div class="results">
@@ -35,8 +35,12 @@
                             <span class="result__data">{{ proveedor.telefono }}</span>
                             <span class="result__data">{{ proveedor.tipoProveedor.nombre }}</span>
                             <span class="result__data">{{ proveedor.activo ? 'Si' : 'No' }}</span>
-                            <a href="{{ path('editar', {'idProveedor': proveedor.id}) }}" class="btn__small btn--green"><i class="fa-solid fa-pen-to-square"></i></a>
-                            <a href="{{ path('eliminar', {'idProveedor': proveedor.id}) }}" class="btn__small btn--red"><i class="fa-solid fa-trash"></i></a>
+                            <a href="{{ path('editar', {'idProveedor': proveedor.id}) }}" class="btn__small btn--green">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </a>
+                            <a href="#" class="btn__small btn--red delete__provider" data-providername="{{ proveedor.nombre }}" data-providerid="{{ proveedor.id }}">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
 
                         </div>
                         {% endfor %}
@@ -47,5 +51,17 @@
             </div>
         </div>
     </div>
+    <script>
+        const providers = document.querySelectorAll('.delete__provider');
+        providers.forEach(provider => {
+            provider.addEventListener('click', e => {
+                const elem = e.target.closest('.delete__provider');
+                e.preventDefault();
+                if (confirm(`¿Seguro que desea eliminar el proveedor: ${elem.getAttribute('data-providername')}?`)) {
+                 window.location = `./eliminar/${elem.getAttribute('data-providerid')}`;
+                }
 
+            })
+        })
+    </script>
 {% endblock %}
