@@ -731,3 +731,16 @@ cd687a,127.0.0.1,GET,http://localhost/administrador-proveedores/public/index.php
 73ca2a,127.0.0.1,GET,http://localhost/administrador-proveedores/public/index.php/editar/7,1700995431,,200
 a16a4a,127.0.0.1,GET,http://localhost/administrador-proveedores/public/index.php/editar/7,1700995450,,200
 296020,127.0.0.1,GET,http://localhost/administrador-proveedores/public/index.php/administrator,1700995469,,200
+38a653,127.0.0.1,GET,http://localhost/administrador-proveedores/public/,1701025733,,200
+319739,127.0.0.1,GET,http://localhost/administrador-proveedores/public/index.php/administrator/Javier/,1701026064,55f9c9,404
+55f9c9,127.0.0.1,GET,http://localhost/administrador-proveedores/public/index.php/administrator/Javier/,1701026064,,404
+9dcd8c,127.0.0.1,GET,http://localhost/administrador-proveedores/public/index.php/administrator,1701026073,,200
+6829ef,127.0.0.1,GET,http://localhost/administrador-proveedores/public/index.php/agregar,1701026079,,200
+f621e8,127.0.0.1,GET,http://localhost/administrador-proveedores/public/index.php/,1701026086,,200
+99baf5,127.0.0.1,GET,http://localhost/administrador-proveedores/public/index.php/administrator,1701026087,,200
+6eb107,127.0.0.1,GET,http://localhost/administrador-proveedores/public/index.php/agregar,1701026090,,200
+e0d9ff,127.0.0.1,GET,http://localhost/administrador-proveedores/public/index.php/administrator,1701026093,,200
+1ef8dc,127.0.0.1,GET,http://localhost/administrador-proveedores/public/index.php/administrator,1701026146,,200
+0dcf81,127.0.0.1,GET,http://localhost/administrador-proveedores/public/index.php/agregar,1701026188,,200
+1d9c90,127.0.0.1,GET,http://localhost/administrador-proveedores/public/index.php/administrator,1701026207,,200
+2feabd,127.0.0.1,GET,http://localhost/administrador-proveedores/public/index.php/editar/4,1701026212,,200

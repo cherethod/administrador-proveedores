@@ -31,7 +31,8 @@ class ProveedoresType extends AbstractType
             ->add('tipoProveedor', EntityType::class, [
                 'class' => TipoProveedor::class,
                 'choice_label' => 'nombre',
-                'choice_value' => 'id',
+                'choice_value' => 'id',                
+                'placeholder' => 'Seleccione tipo de proveedor',
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Enviar',
