@@ -3,32 +3,6 @@
 {% block title %}Inicio{% endblock %}
 
 {% block body %}
-{# Esto es un comentario #}
-{% set Nombre = 'Javier Guevara' %}
-    {# <h3>Bienvenido {{Nombre}}</h3>
-    <p>Email: {{CorreoElectronicoRecibidoDeControllador}}</p>
-
-    {% if Num1 > Num2 %}
-      <p>Número uno ({{Num1}}) es mayor que número dos ({{Num2}})</p>
-      {% else %}
-        <p>Número uno ({{Num1}}) es menor que número dos ({{Num2}})</p>
-    {% endif %}
-    <p>{{Names |lower}}</p>
-    <p>{{Names |upper}}</p>
-    <p>{{Names |capitalize}}</p> // Solo capitaliza el primero al ser una cadena de texto
-    <ul>
-      {% for Name in NamesArray %}
-        <li>{{Name |capitalize}}</li>
-      {% endfor %}
-    </ul>
-
-    {% set NamesArray2 = Names |replace({' ' : ''}) |split(',') %}
-    <ul>
-      {% for Name in NamesArray2 %}
-        <li>{{Name |capitalize}}</li>
-      {% endfor %}
-    </ul> #}
-
     <div class="container">
         <div class="main__container">
             <a href="{{ path('administrator') }}" class="btn__primary btn__primary--link">Acceder</a>        
