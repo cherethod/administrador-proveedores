@@ -11,6 +11,15 @@
             </div>
             <div class="main__container edit__provider">
                 {{ form_start(editar_proveedor) }}
+                    {{ form_row(editar_proveedor.nombre) }}
+                    {{ form_row(editar_proveedor.email) }}
+                    {{ form_row(editar_proveedor.telefono) }}
+                    {{ form_row(editar_proveedor.activo) }}
+                    {{ form_row(editar_proveedor.tipoProveedor) }}
+                <div class="btns__container">
+                    {{ form_row(editar_proveedor.submit) }}
+                    {{ form_row(editar_proveedor.cancelar) }}
+                </div>
                 {{ form_end(editar_proveedor) }}
             </div>
         </div>

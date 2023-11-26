@@ -106,8 +106,15 @@ class AdministratorController extends AbstractController
             throw new \Error('Error al eliminar el provedor');
         }
 
-//        return new Response('Registro eliminado correctamente');
 
+        return $this->redirectToRoute('administrator');
+    }
+
+    /**
+     * @Route("/cancelar", name="cancelar")
+     */
+    public function cancelar()
+    {
         return $this->redirectToRoute('administrator');
     }
 }

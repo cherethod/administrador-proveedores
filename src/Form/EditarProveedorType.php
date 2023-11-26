@@ -6,6 +6,7 @@ use App\Entity\Proveedores;
 use App\Entity\TipoProveedor;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ButtonType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -33,7 +34,17 @@ class EditarProveedorType extends AbstractType
                 'placeholder' => 'Seleccione tipo de proveedor',
                 'choice_value' => 'id',
             ])
-            ->add('Enviar', SubmitType::class);
+            ->add('submit', SubmitType::class, [
+                    'label' => 'Enviar',
+                    'attr' => [ 'class' => 'btn__primary form__btn'],
+            ])
+            ->add('cancelar', ButtonType::class, [
+                'label' => 'Cancelar',
+                'attr' => [
+                    'class' => 'btn__primary form__btn form__btn--red',
+                    'onclick' => 'window.location.href="../administrator"'
+                ]
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
