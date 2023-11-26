@@ -53,21 +53,21 @@ class __TwigTemplate_e275325f12f686d61d7db0c512eec2f9d22cc29383ac27073bdaac4c770
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
         ";
-        // line 8
-        echo "        ";
+        // line 6
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 12
+        // line 9
         echo "
         ";
-        // line 13
+        // line 10
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 16
-        echo "    </head>
+        // line 13
+        echo "
+    </head>
     <body>
         ";
-        // line 18
+        // line 16
         $this->displayBlock('body', $context, $blocks);
-        // line 19
+        // line 17
         echo "    </body>
 </html>
 ";
@@ -98,7 +98,7 @@ class __TwigTemplate_e275325f12f686d61d7db0c512eec2f9d22cc29383ac27073bdaac4c770
 
     }
 
-    // line 8
+    // line 6
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -108,9 +108,7 @@ class __TwigTemplate_e275325f12f686d61d7db0c512eec2f9d22cc29383ac27073bdaac4c770
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 9
-        echo "            ";
-        // line 10
+        // line 7
         echo "            <link rel=\"stylesheet\" href=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/style.css"), "html", null, true);
         echo "\">
@@ -123,7 +121,7 @@ class __TwigTemplate_e275325f12f686d61d7db0c512eec2f9d22cc29383ac27073bdaac4c770
 
     }
 
-    // line 13
+    // line 10
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -133,10 +131,9 @@ class __TwigTemplate_e275325f12f686d61d7db0c512eec2f9d22cc29383ac27073bdaac4c770
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 14
-        echo "            ";
-        // line 15
-        echo "        ";
+        // line 11
+        echo "            <script src=\"https://kit.fontawesome.com/02bffae606.js\" crossorigin=\"anonymous\"></script>
+        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -145,7 +142,7 @@ class __TwigTemplate_e275325f12f686d61d7db0c512eec2f9d22cc29383ac27073bdaac4c770
 
     }
 
-    // line 18
+    // line 16
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -176,7 +173,7 @@ class __TwigTemplate_e275325f12f686d61d7db0c512eec2f9d22cc29383ac27073bdaac4c770
      */
     public function getDebugInfo()
     {
-        return array (  149 => 18,  139 => 15,  137 => 14,  127 => 13,  114 => 10,  112 => 9,  102 => 8,  83 => 5,  71 => 19,  69 => 18,  65 => 16,  63 => 13,  60 => 12,  57 => 8,  53 => 5,  47 => 1,);
+        return array (  146 => 16,  135 => 11,  125 => 10,  112 => 7,  102 => 6,  83 => 5,  71 => 17,  69 => 16,  64 => 13,  62 => 10,  59 => 9,  57 => 6,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -186,16 +183,14 @@ class __TwigTemplate_e275325f12f686d61d7db0c512eec2f9d22cc29383ac27073bdaac4c770
     <head>
         <meta charset=\"UTF-8\">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
             <link rel=\"stylesheet\" href=\"{{asset('css/style.css')}}\">
         {% endblock %}
 
         {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
+            <script src=\"https://kit.fontawesome.com/02bffae606.js\" crossorigin=\"anonymous\"></script>
         {% endblock %}
+
     </head>
     <body>
         {% block body %}{% endblock %}

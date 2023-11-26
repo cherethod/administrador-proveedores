@@ -84,16 +84,11 @@ class __TwigTemplate_fde294688154c2bada565f9bb84e8f3cad9f0dff6ad8c3c5670483e7fd9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 7
-        $context["Nombre"] = "Javier Guevara";
-        // line 8
-        echo "    ";
-        // line 31
-        echo "
-    <div class=\"container\">
+        // line 6
+        echo "    <div class=\"container\">
         <div class=\"main__container\">
             <a href=\"";
-        // line 34
+        // line 8
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("administrator");
         echo "\" class=\"btn__primary btn__primary--link\">Acceder</a>        
         </div>
@@ -128,7 +123,7 @@ class __TwigTemplate_fde294688154c2bada565f9bb84e8f3cad9f0dff6ad8c3c5670483e7fd9
      */
     public function getDebugInfo()
     {
-        return array (  97 => 34,  92 => 31,  90 => 8,  88 => 7,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -138,32 +133,6 @@ class __TwigTemplate_fde294688154c2bada565f9bb84e8f3cad9f0dff6ad8c3c5670483e7fd9
 {% block title %}Inicio{% endblock %}
 
 {% block body %}
-{# Esto es un comentario #}
-{% set Nombre = 'Javier Guevara' %}
-    {# <h3>Bienvenido {{Nombre}}</h3>
-    <p>Email: {{CorreoElectronicoRecibidoDeControllador}}</p>
-
-    {% if Num1 > Num2 %}
-      <p>Número uno ({{Num1}}) es mayor que número dos ({{Num2}})</p>
-      {% else %}
-        <p>Número uno ({{Num1}}) es menor que número dos ({{Num2}})</p>
-    {% endif %}
-    <p>{{Names |lower}}</p>
-    <p>{{Names |upper}}</p>
-    <p>{{Names |capitalize}}</p> // Solo capitaliza el primero al ser una cadena de texto
-    <ul>
-      {% for Name in NamesArray %}
-        <li>{{Name |capitalize}}</li>
-      {% endfor %}
-    </ul>
-
-    {% set NamesArray2 = Names |replace({' ' : ''}) |split(',') %}
-    <ul>
-      {% for Name in NamesArray2 %}
-        <li>{{Name |capitalize}}</li>
-      {% endfor %}
-    </ul> #}
-
     <div class=\"container\">
         <div class=\"main__container\">
             <a href=\"{{ path('administrator') }}\" class=\"btn__primary btn__primary--link\">Acceder</a>        
